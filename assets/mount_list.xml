@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Mounts>
+    <!--挂载信息
+    <Mount>
+        <!--1:NFS  2:SAMBA-->
+        <type>1</type>
+        <address>192.168.0.118</address>
+        <workpath>/volume1/video</workpath>
+    </Mount>
+
+    <Mount>
+        <!--1:NFS  2:SAMBA-->
+        <type>2</type>
+        <address>192.168.0.118</address>
+        <workpath>share</workpath>
+        <user>share</user>
+        <password>share</password>
+    </Mount>-->
+</Mounts>

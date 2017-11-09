@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="71px"
+    android:gravity="center_vertical"
+    android:padding="9px"
+    android:orientation="horizontal">
+    
+    <TextView 
+        android:id="@+id/self_define_name"
+        android:layout_width="100px"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5px"
+        android:gravity="right|center_vertical"
+        android:focusable="false"
+        android:textSize="25px"
+        android:textColor="@color/white_70" 
+        android:singleLine="true"
+        android:ellipsize="marquee"/>
+
+    <TextView 
+        android:id="@+id/folder_path"
+        android:layout_width="0dp"
+        android:layout_height="53px"
+        android:layout_weight="1"
+        android:layout_marginRight="10px"
+        android:paddingLeft="10px"
+        android:paddingRight="10px"
+        android:gravity="center_vertical"
+        android:focusable="false"
+        android:textSize="25px"
+        android:singleLine="true"
+        android:textColor="@color/white_70" />
+    
+    <Button 
+        android:id="@+id/folder_edite"
+        android:layout_width="80px"
+        android:layout_height="53px"
+        android:layout_marginRight="10px"
+        android:focusable="true"
+        android:textSize="25px"
+        android:textColor="@color/white_70"
+        android:background="@drawable/button_selector"
+        android:text="@string/settings_movie_item_edite" />
+    
+    <Button 
+        android:id="@+id/folder_delete"
+        android:layout_width="80px"
+        android:layout_height="53px"
+        android:focusable="true"
+        android:textSize="25px"
+        android:textColor="@color/white_70"
+        android:background="@drawable/button_selector"
+        android:text="@string/settings_movie_item_delete" />
+</LinearLayout>

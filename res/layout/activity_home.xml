@@ -1,0 +1,190 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawable_bg" >
+
+    <LinearLayout
+        android:id="@+id/list_layout"
+        android:layout_width="241px"
+        android:layout_height="match_parent"
+        android:background="@drawable/drawable_list_bg"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18px"
+            android:layout_marginTop="41px"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/home_back_iv"
+                android:layout_width="39px"
+                android:layout_height="39px"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/home_list_cur_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="39px"
+                android:text="@string/home_title_name"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="35px"
+                android:visibility="visible" />
+        </LinearLayout>
+        
+        <TextView
+            android:id="@+id/movie_search"
+            android:layout_width="198px"
+            android:layout_height="37px"
+            android:layout_marginTop="8px"
+            android:layout_marginBottom="8px"
+            android:paddingLeft="15px"
+            android:paddingRight="5px"
+            android:gravity="center"
+            android:text="@string/text_search"
+            android:textSize="25px"
+            android:textColor="@color/white_50"
+            android:drawableLeft="@drawable/ic_search_left_drawable"
+            android:background="@drawable/search_text_selector" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginRight="9px"
+            android:layout_marginLeft="9px"
+            android:background="@drawable/drawable_divider" />
+
+        <com.hisilicon.videocenter.view.MyListView
+            android:id="@+id/listView"
+            android:layout_width="199px"
+            android:layout_height="0dp"
+            android:layout_marginTop="18px"
+            android:layout_weight="1"
+            android:divider="@null"
+            android:dividerHeight="20px"
+            android:listSelector="@drawable/list_item_selector"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/id_current_type_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300px"
+        android:layout_marginTop="56px"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="25px"
+        android:visibility="visible" />
+
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="62px"
+        android:layout_marginTop="36px">
+    <ImageView
+        android:id="@+id/id_settings_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/statusbar_settings_selector" />
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:text="@string/setting"
+        android:textColor="#fff"
+        android:textSize="20sp"/>     
+    </LinearLayout>
+   
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="222px"
+        android:layout_marginTop="36px">
+         <ImageView
+        android:id="@+id/id_enter_file_manager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:focusable="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/statusbar_usb_selector" 
+        android:visibility="gone"/>
+         <TextView 
+        android:id="@+id/tv_local_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:text="@string/local_select"
+        android:textColor="#fff"
+        android:textSize="20sp"/> 
+    </LinearLayout>
+    
+  
+
+    <LinearLayout
+        android:id="@+id/grid_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="19px"
+        android:layout_marginRight="35px"
+        android:layout_marginTop="114px"
+        android:layout_toRightOf="@+id/list_layout"
+        android:orientation="vertical" >
+
+        <com.hisilicon.videocenter.view.MyGridView
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawSelectorOnTop="true"
+            android:horizontalSpacing="12px"
+            android:listSelector="@drawable/grid_item_selector"
+            android:numColumns="5"
+            android:scrollbarFadeDuration="5000"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="vertical"
+            android:verticalSpacing="50dp"
+            android:nextFocusRight="@+id/id_enter_file_manager" />
+
+        <TextView
+            android:id="@+id/textPage"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:gravity="right"
+            android:textColor="@color/color_message_title_gray"
+            android:textSize="25sp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="80dp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/movie_list_folder"
+        android:layout_width="581px"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="469px"
+        android:layout_marginTop="152px"
+        android:listSelector="@drawable/foder_list_item_selector"
+        android:dividerHeight="1px"
+        android:divider="@drawable/ic_settings_divider"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical"
+        android:visibility="gone" />
+
+</RelativeLayout>

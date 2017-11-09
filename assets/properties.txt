@@ -1,0 +1,2 @@
+show_local_play=true
+root_path=VideoCenter

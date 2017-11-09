@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="@drawable/drawable_bg"
+    tools:context="${relativePackage}.${activityClass}" >
+
+   <LinearLayout 
+    android:id="@+id/rl1"
+     android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="100dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/manager_titel" 
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center_vertical"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/del_titel" 
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="100dp"
+        android:layout_gravity="center_vertical"/>
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/del_titel2" 
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center_vertical|right"
+        android:drawableLeft="@drawable/caidanjian"/>
+   
+</LinearLayout>
+<View 
+    android:id="@+id/view1"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#7b7f85"
+    android:layout_marginLeft="100dp"
+    android:layout_marginRight="100dp"
+    android:layout_below="@+id/rl1"/>
+    <ListView 
+    android:id="@+id/file_listview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/view1"
+    android:layout_above="@+id/view2"
+    android:divider="#7b7f85"
+    android:listSelector="#2b344b"
+    android:paddingLeft="100dp"></ListView>
+    <View 
+        android:id="@+id/view2"
+    android:layout_width="match_parent"
+    android:layout_height="3dp"
+    android:background="@color/white"
+    android:layout_above="@+id/rl2"
+    android:visibility="gone"/>
+    <RelativeLayout 
+        android:id="@+id/rl2"
+    android:layout_width="match_parent"
+    android:layout_height="80dp" 
+    android:layout_alignParentBottom="true">
+         <TextView
+        android:id="@+id/tv_current_path"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="@string/buttom_titel"
+        android:textColor="@color/white"
+        android:focusable="false"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="70dp"/>
+         
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        
+        android:background="@drawable/btn_sure_selecter"
+        android:text="@string/del_finish"
+        android:textColor="@color/white"
+        android:focusable="true"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="80dp"/>
+   
+    </RelativeLayout>
+    
+    <ProgressBar 
+        android:id="@+id/pb"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="gone"
+       	android:layout_centerInParent="true"/>
+
+</RelativeLayout>

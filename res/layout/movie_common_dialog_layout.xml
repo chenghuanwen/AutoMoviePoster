@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="36px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5px"
+        android:layout_marginTop="5px"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="25px" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@drawable/ic_settings_divider"
+        android:focusable="false" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px"
+        android:layout_marginLeft="100px"
+        android:layout_marginRight="100px"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textColor="@color/white_70"
+        android:textSize="25px" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100px"
+        android:layout_marginRight="100px"
+        android:layout_marginTop="40px"
+        android:layout_marginBottom="40px"
+        android:layout_gravity="center_horizontal" >
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="133px"
+            android:layout_height="53px"
+            android:gravity="center"
+            android:layout_marginRight="200px"
+            android:background="@drawable/button_selector"
+            android:text="@string/ok"
+            android:textColor="@color/white_70"
+            android:textSize="25px" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="133px"
+            android:layout_height="53px"
+            android:gravity="center"
+            android:background="@drawable/button_selector"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:text="@string/cancel"
+            android:textColor="@color/white_70"
+            android:textSize="25px" />
+    </LinearLayout>
+
+</LinearLayout>

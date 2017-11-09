@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="703px"
+    android:layout_height="380px" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="52px"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/settings_movie_foler_manage"
+            android:textColor="@color/white"
+            android:textSize="25px" />
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="52px"
+            android:gravity="center_vertical"
+            android:tabStripEnabled="false" >
+        </TabWidget>
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_marginTop="10px"
+            android:layout_weight="1" >
+        </FrameLayout>
+    </LinearLayout>
+
+</TabHost>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="mountType">
+        <item>USB2.0</item>
+        <item>USB3.0</item>
+        <item>SATA</item>
+        <item>CARD</item>
+        <item>UNKOWN</item>
+        <item>CD-ROM</item>
+    </string-array>
+    
+    <string-array name="show_method">
+       <item>列表</item>
+		<item>缩略图</item>
+    </string-array>
+    
+    <string-array name="sort_method">
+       <item>文件名称</item>
+		<item>文件大小</item>
+		<item>修改时间</item>
+    </string-array>
+    
+    <string-array name="filter_method">
+		<item>所有文件</item>
+		<item>所有图片</item>
+		<item>所有音频</item>
+		<item>所有视频</item>
+	</string-array>
+	
+   <string-array name="type_info_list">
+		<item>科幻</item>
+		<item>古装</item>
+		<item>悬疑</item>
+		<item>蓝光</item>
+		<item>美国</item>
+		<item>武侠</item>
+		<item>中国</item>
+		<item>喜剧</item>
+	</string-array>
+
+</resources>

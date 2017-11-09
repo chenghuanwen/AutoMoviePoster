@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="36px"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5px"
+        android:layout_marginBottom="5px"
+        android:focusable="false"
+        android:textColor="@color/white"
+        android:textSize="25px"
+        android:text="@string/settings_movie_foler_manage"/>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@drawable/ic_settings_divider"
+        android:focusable="false"
+        />
+    
+    <ListView
+        android:id="@+id/folder_list_recyclerView"
+        android:layout_marginTop="20px"
+        android:layout_marginLeft="15px"
+        android:layout_marginRight="15px"
+        android:layout_width="match_parent"
+        android:layout_height="213px"
+        android:scrollbars="none"
+        android:descendantFocusability="afterDescendants"/>
+
+    <Button
+        android:id="@+id/folder_back_btn"
+        android:layout_width="133px"
+        android:layout_height="53px"
+        android:layout_margin="20px"
+        android:background="@drawable/button_selector"
+        android:text="@string/text_back"
+        android:textColor="@color/white_70"
+        android:textSize="25px" />
+  
+       
+
+</LinearLayout>

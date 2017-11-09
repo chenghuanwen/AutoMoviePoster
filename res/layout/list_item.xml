@@ -1,0 +1,11 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="45px"
+    android:gravity="center"
+    android:textColor="@drawable/list_item_color_selector"
+    android:textSize="30px"
+    android:singleLine="true"
+    android:ellipsize="marquee" >
+
+</TextView>

@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/movie_settings_ic_image_width"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/iv_arrow_left"
+        android:layout_width="@dimen/movie_settings_ic_image_width"
+        android:layout_height="@dimen/movie_settings_ic_image_height"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_settings_arrow_left" />
+
+    <TextView
+        android:id="@+id/tv_switch_current"
+        android:layout_width="@dimen/switch_text_width"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textColor="@color/white_100"
+        android:textSize="25px" 
+        android:visibility="visible"
+        />
+
+    <ImageView
+        android:id="@+id/iv_arrow_right"
+        android:layout_width="@dimen/movie_settings_ic_image_width"
+        android:layout_height="@dimen/movie_settings_ic_image_height"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_settings_arrow_right" />
+
+</LinearLayout>

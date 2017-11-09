@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/file_name_title"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="@string/file_info_name"
+        android:textSize="24px" />
+
+    <TextView
+        android:id="@+id/file_name"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/file_name_title"
+        android:gravity="left"
+        android:textSize="24px" />
+
+    <TextView
+        android:id="@+id/file_type_title"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/file_name"
+        android:gravity="right"
+        android:text="@string/file_info_type"
+        android:textSize="24px" />
+
+    <TextView
+        android:id="@+id/file_type"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/file_type_title"
+        android:layout_toRightOf="@id/file_type_title"
+        android:gravity="left"
+        android:textSize="24px" />
+
+    <TextView
+        android:id="@+id/file_size_title"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/file_type"
+        android:gravity="right"
+        android:text="@string/file_info_size"
+        android:textSize="24px" />
+
+    <TextView
+        android:id="@+id/file_size"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/file_size_title"
+        android:layout_toRightOf="@id/file_size_title"
+        android:gravity="left"
+        android:textSize="24px" />
+
+    <TextView
+        android:id="@+id/file_modify_title"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/file_size"
+        android:gravity="right"
+        android:text="@string/file_info_modify_time"
+        android:textSize="24px" />
+
+    <TextView
+        android:id="@+id/file_modify"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/file_modify_title"
+        android:layout_toRightOf="@id/file_modify_title"
+        android:gravity="left"
+        android:textSize="24px" />
+
+</RelativeLayout>

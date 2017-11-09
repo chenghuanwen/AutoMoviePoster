@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--视频信息-->
+<VideoInfo>
+    <!--片名-->
+    <title>十二生肖</title>
+    <!--导演-->
+    <director>成龙</director>
+    <!--演员-->
+    <performer>成龙</performer>
+    <!--分类-->
+    <type>动作 科幻</type>
+    <!--简介-->
+    <synopsis>鼠首、牛首、虎首、兔首</synopsis>
+</VideoInfo>
