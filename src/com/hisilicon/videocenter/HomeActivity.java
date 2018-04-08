@@ -22,8 +22,10 @@ import java.util.regex.Pattern;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
@@ -109,6 +111,7 @@ import com.hisilicon.videocenter.util.LogUtil;
 import com.hisilicon.videocenter.util.Movie;
 import com.hisilicon.videocenter.util.MovieBaseInfo;
 import com.hisilicon.videocenter.util.MsgConstant;
+import com.hisilicon.videocenter.util.XBMCListenerService;
 import com.hisilicon.videocenter.view.CommonDialog;
 import com.hisilicon.videocenter.view.EditeTextDialog;
 import com.hisilicon.videocenter.view.GridAdapter;
@@ -190,7 +193,7 @@ public class HomeActivity extends Activity implements OnClickListener,
 	
 	private ConnectivityManager connectivityManager;
 	private Dialog netDialog;
-	
+	private static final String  posterUrl = "http://haibao.jiashilian.com/index/index/index";
 
 	@Override
 	public boolean handleMessage(android.os.Message msg) {
@@ -235,7 +238,7 @@ public class HomeActivity extends Activity implements OnClickListener,
 
 		case MsgConstant.MSG_FOCUS:
 			listView.requestFocus();
-			getAutoDatabaseMovies();
+			//getAutoDatabaseMovies();
 			break;
 
 		case MsgConstant.MSG_LOAD_FAIL:
@@ -277,7 +280,7 @@ public class HomeActivity extends Activity implements OnClickListener,
 			break;
 			
 		case MsgConstant.AUTO_ADD_MOVIE_FINISH://自动添加海报完成
-			LogUtil.i("folder", "刷新111111111111" );
+			LogUtil.i("folder", "刷新111111111111");
 			gridAdapter.refreshView(mAllMovies);
 			
 			//gridView.smoothScrollToPositionFromTop(mAllMovies.size()-1, 0);
@@ -339,9 +342,9 @@ public class HomeActivity extends Activity implements OnClickListener,
 		
 		localStorePath = sataUtil.getSataPath();
 		
-	//	new UnlockThread().start();
+	    //	new UnlockThread().start();
 		
-		checkMovieDirPath();
+		//checkMovieDirPath();
 		
 		//getAutoDatabaseMovies();
 	}
@@ -425,7 +428,7 @@ public class HomeActivity extends Activity implements OnClickListener,
 	@Override
 	protected void onResume() {
 		super.onResume();
-		
+		HiSettingsManager.getInstance().setLanguageIndex(0);//设置默认中文字幕
 	}
 
 	@Override
@@ -441,6 +444,8 @@ public class HomeActivity extends Activity implements OnClickListener,
 	    //删除解密文件
 	  /*  File unlock = new File(unlockImage);
 	    deleteUnlockDir(unlock);*/
+	    
+	    stopService(new Intent(HomeActivity.this,XBMCListenerService.class));
 	}
 	
 	
@@ -1213,7 +1218,7 @@ public class HomeActivity extends Activity implements OnClickListener,
 	      //每个文件夹遍历都会调用该方法
 	      File[] files = file.listFiles();
 	      if (files == null || files.length == 0) {
-	    	  LogUtil.i("folder","空文件夹=====");
+	    	  LogUtil.i("folder","空文件夹====="+files.length);
 	           return ;
 	      }
 
@@ -1522,6 +1527,8 @@ public class HomeActivity extends Activity implements OnClickListener,
 
 
 	public void downloadInfo(ArrayList<MovieBaseInfo> baseInfos){
+		if(baseInfos.size()==0)
+			return;
 		downloadCount=0;
 		oldDownloadCount = 0;
 		StringBuilder sb = new StringBuilder();
@@ -1539,6 +1546,13 @@ public class HomeActivity extends Activity implements OnClickListener,
 			String postPath = sb.append(downloadBase).append("posters/").append(base.getName()).append("-poster.jpg").toString();
 			sb.setLength(0);
 			posterReq = new Request.Builder().url(postPath).build();
+		/*	RequestBody body = new FormBody.Builder()
+			.add("movie_name", base.getName())
+			.build();
+			posterReq = new Request.Builder()
+			.url(posterUrl)
+			.post(body)
+			.build();*/
 			LogUtil.i("folder","download poster==="+postPath);
 			
 			 postFile = new File(sbPoster.append(newPoster).append("/").append(base.getName()).append("-poster.jpg").toString());
@@ -1554,7 +1568,11 @@ public class HomeActivity extends Activity implements OnClickListener,
 			
 			String nfoPath = sb.append(downloadBase).append("infos/").append(base.getName()).append(".nfo").toString();
 			sb.setLength(0);
-			nfoReq = new Request.Builder().url(nfoPath).build();
+			posterReq = new Request.Builder().url(nfoPath).build();
+			/*nfoReq = new Request.Builder()
+			 		.url(posterUrl)
+					.post(body)
+					.build();*/
 			LogUtil.i("folder","download nfo==="+nfoPath);
 			
 			nfoFile = new File(sbNfo.append(newNFO).append("/").append(base.getName()).append(".nfo").toString());
@@ -1582,7 +1600,7 @@ public class HomeActivity extends Activity implements OnClickListener,
 			@Override
 			public void onResponse(Call arg0, Response arg1) throws IOException {
 				// TODO Auto-generated method stub
-			
+		//	Log.i("folder","download msg ==="+arg1.body().string());
 				try {
 					 FileOutputStream	out = new FileOutputStream(file);				
 					 ResponseBody body = arg1.body();
@@ -1604,7 +1622,7 @@ public class HomeActivity extends Activity implements OnClickListener,
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}	
+				}
 			}
 
 			@Override

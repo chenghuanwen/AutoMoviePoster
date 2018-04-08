@@ -65,7 +65,8 @@
     <string name="text_duration">时长：</string>
     <string name="text_synopsis">剧情：</string>
     <string name="text_all">全部</string>
-    <string name="text_play">播放</string>
+    <string name="text_play">默认播放</string>
+    <string name="text_play2">XBMC播放</string>
     <string name="text_search">影片搜索</string>
     <string name="text_back">返回</string>
     <string name="text_input">请输入关键字</string>

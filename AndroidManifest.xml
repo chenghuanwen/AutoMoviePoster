@@ -3,7 +3,8 @@
     package="com.hisilicon.videocenter"
     android:sharedUserId="android.uid.system"
     android:versionCode="2"
-    android:versionName="2.0.0" >
+    android:versionName="2.0.0"
+     >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -104,6 +105,10 @@
             android:label="@string/title_activity_path_manager"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"  >
         </activity>
+        <receiver android:name="com.hisilicon.videocenter.util.XBMCReceiver"
+            android:exported="true"
+            ></receiver>
+        <service android:name="com.hisilicon.videocenter.util.XBMCListenerService"></service>
     </application>
 
 </manifest>

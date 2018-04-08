@@ -162,4 +162,15 @@
          <string name="no_network_toast">The network was disconnected,will can not load the informations of movie,do you want to go on?</string>
          <string name="setting">Setting</string>
 	<string name="local_select">Local</string>
+	
+	
+	 <string name="text_director">Director：</string>
+    <string name="text_performer">Actor：</string>
+    <string name="text_type">Type：</string>
+    <string name="text_area">District：</string>
+    <string name="text_duration">Duration：</string>
+    <string name="text_synopsis">Information：</string>
+    <string name="text_all">All</string>
+	<string name="text_play">default player</string>
+    <string name="text_play2">XBMC player</string>
 </resources>

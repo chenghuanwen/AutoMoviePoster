@@ -360,13 +360,15 @@ public class DataManager {
 			String tempPath = NfsController.getInstance().mountPathSync(item);
 			String configFile = tempPath + File.separator + MEDIA_CONFIG_FILE_NAME;
 			File cfgfile = new File(configFile);
-			LogUtil.i("folder","预加载网络路径==="+tempPath);
+			LogUtil.i("folder","挂载网络路径==="+tempPath);
 			if (cfgfile.exists() && cfgfile.canRead()) {//老版本，有电影索引文件
+				Log.i("folder","老版本========");
 				List<Movie> tempMovie = Common.parseFolder(tempPath);
 				if (tempMovie != null) {
 					mAllMovies.put(tempPath, tempMovie);
 				}
 			}else{
+				Log.i("folder","新版本自动添加========");
 				Message autoMsg = Message.obtain();
 				autoMsg.obj = tempPath;
 				autoMsg.what = MsgConstant.MSG_AUTO_SEARCH_MOVIE;

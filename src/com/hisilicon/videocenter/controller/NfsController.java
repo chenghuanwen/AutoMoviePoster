@@ -145,16 +145,16 @@ public class NfsController {
 		String returnStr = nfsClient.getMountPoint(builder.toString().replace("\\", "/"));
 		if (returnStr == null || returnStr.equals("ERROR")) {
 			int result = nfsClient.mount(builder.toString(),null);
-			Log.e("ADD1165", "mountPath result: " + result);
+			LogUtil.i("folder", "mountPath result: " + result);
 			returnStr = nfsClient.getMountPoint(builder.toString().replace("\\", "/"));
 			if (returnStr == null || returnStr.equals("ERROR")) {
-				Log.e("ADD1165", "mountPath 2 returnStr: " + returnStr);
+				LogUtil.i("folder", "mountPath 2 returnStr: " + returnStr);
 				return null;
 			} else {
 				return returnStr + File.separator + netItem.get(Nfs.ABSOLUTE_PATH);
 			}
 		} else {
-			Log.e("ADD1165", "mountPath returnStr: " + returnStr);
+			LogUtil.i("folder", "mountPath returnStr: " + returnStr);
 			return returnStr + File.separator + netItem.get(Nfs.ABSOLUTE_PATH);
 		}
 
