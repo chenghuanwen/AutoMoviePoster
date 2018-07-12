@@ -161,7 +161,7 @@ public class MovieActivity extends Activity implements OnItemClickListener{
 	
 	private Thread mGetSynopsosThread = null;
 	private String order[] = {"input","tap","1000","200"}; 
-//	private String order = "adb shell input tap 1000 200";
+	private String orderLog[] = {"su","logcat","|" ,"grep", "org.xbmc.kodi"};
 	private void intAsync() {
 		mGetSynopsosThread = new Thread(new Runnable() {
 			
@@ -237,7 +237,7 @@ public class MovieActivity extends Activity implements OnItemClickListener{
             }
 	    }
 	    
-	   // stopService(new Intent(MovieActivity.this,XBMCListenerService.class));
+	    stopService(new Intent(MovieActivity.this,XBMCListenerService.class));
 	}
 	
 	private String getMediaType(String filePath) {
@@ -298,6 +298,7 @@ public class MovieActivity extends Activity implements OnItemClickListener{
 		styledText.setSpan(new TextAppearanceSpan(this, style1), 0, len1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		styledText.setSpan(new TextAppearanceSpan(this, style2), len1, (len1 + len2), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		textView.setText(styledText, TextView.BufferType.SPANNABLE);
+
 	}
 
 	private void playMovie(int index,int mode) {
@@ -334,16 +335,18 @@ public class MovieActivity extends Activity implements OnItemClickListener{
 		}else{
 			
 			openAPPByPackage("org.xbmc.kodi",moviePath,Mediatype);
-			
+			  startService(new Intent(MovieActivity.this,XBMCListenerService.class));
 			 SystemClock.sleep(7000);
 		        try {
 		            new ProcessBuilder(order).start();//模拟输入去掉xbmc弹窗
+		            new ProcessBuilder(orderLog).start();//过滤xbmclog
 		            return;
 		        } catch(IOException e) {
 		            e.printStackTrace();
 		            Log.i("CHW","input error ==="+e.toString());
 		        }
 			
+		        
 			//openAPPByPackage("org.morefun.morefuntv",moviePath,Mediatype);
 
 		/*	SystemClock.sleep(3000);
